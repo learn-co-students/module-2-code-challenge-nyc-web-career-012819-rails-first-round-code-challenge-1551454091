@@ -1,0 +1,12 @@
+<h1>Welcome to our restaurant!</h1>
+
+<%= label_tag "Restaurant Name:" %>
+<%= @restaurant.name %>
+<br>
+<%= label_tag "Address: " %>
+<%= @restaurant.address %>
+
+<h2>All The Pizza Associated: </h2>
+<% @pizzas.each do |pizza| %>
+<%= link_to pizza.name, pizza_path(pizza) %>
+<% end %>
