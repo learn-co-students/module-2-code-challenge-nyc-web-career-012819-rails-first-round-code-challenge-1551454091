@@ -9,15 +9,24 @@
 #   1
 Restaurant.destroy_all
  
-Restaurant.create!([{
+r1 = Restaurant.create(
   name: "Sottocasa NYC",
   address: "298 Atlantic Ave, Brooklyn, NY 11201",
-},
-{
+)
+r2 = Restaurant.create(
   name: "PizzArte",
-  address: "69 W 55th St, New York, NY 10019",
-},
-{
+  address: "69 W 55th St, New York, NY 10019"
+)
+r3 = Restaurant.create(
   name: "San Matteo NYC",
   address: "1559 2nd Ave, New York, NY 10028"
-}])
+)
+
+Pizza.destroy_all
+
+Pizza.create(name: "Pepperoni-pallooza", ingredients: "Lots of pepperoni", restaurant_id: r1.id)
+Pizza.create(name: "Supreme", ingredients: "Pepperoni, Olives, Onions, Sausage, Bell peppers, Mushrooms", restaurant_id: r1.id)
+Pizza.create(name: "Plain", ingredients: "Just cheese", restaurant_id: r2.id)
+Pizza.create(name: "Meat Lovers", ingredients: "Pepperoni, Beef, Sausage, Chicken", restaurant_id: r2.id)
+Pizza.create(name: "Veggie Lovers", ingredients: "Olives, Onions, Bell Peppers, Mushrooms", restaurant_id: r2.id)
+Pizza.create(name: "BBQ Chicken", ingredients: "Chicken, BBQ Sauce", restaurant_id: r3.id)
