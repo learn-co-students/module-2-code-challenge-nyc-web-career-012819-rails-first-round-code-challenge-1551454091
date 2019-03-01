@@ -1,0 +1,18 @@
+<h1>M Y | P I Z Z A</h1>
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+  <h1><%= error%><h1>
+  <% end%>
+<% end %>
+
+<h1><%=form_for @pizza do |f| %></h1>
+<%=f.label :name%>
+<%=f.text_field :name%><br>
+<%=f.label :ingredients%>
+<%=f.text_field :ingredients%><br>
+<%=f.collection_select :restaurant_id, @restaurants, :name, :id%>
+
+
+<%=f.submit %>
+<% end %>
