@@ -2,7 +2,14 @@
 
 <% @restaurants.each do |restaurant| %>
   <h1 style='font-size:1.5rem;margin-top:50px'>Restaurant Name:
-      <%= restaurant.name %>
+      <%= link_to restaurant.name, restaurant_path(restaurant) %>
   </h1>
   <p>Address: <%= restaurant.address %></p>
+
 <% end %>
+
+
+  <%= form_tag(restaurants_path, :method => "get") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+  <%= submit_tag "Search" %>
+  <% end %>
