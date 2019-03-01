@@ -1,0 +1,8 @@
+<%= form_for @pizza do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :ingredients %>
+  <%= f.text_field :ingredients %>
+  <%= collection_select(@pizza, :restaurant_id, Restaurant.all, :id, :name) %>
+  <%= f.submit %>
+<% end %>
