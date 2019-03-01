@@ -7,8 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #
 #   1
+
+Pizza.create(name: "Pepperoni with Chocolate", ingredients: "Chocolate, and Pepperoni", restaurant_id: 13)
+Pizza.create(name: "Pepperoni with Cheese", ingredients: "Cheese, and Pepperoni", restaurant_id: 14)
+Pizza.create(name: "Sausage with Cheese", ingredients: "Cheese, and Sausage", restaurant_id: 14)
+
+
+
 Restaurant.destroy_all
- 
+
 Restaurant.create!([{
   name: "Sottocasa NYC",
   address: "298 Atlantic Ave, Brooklyn, NY 11201",
