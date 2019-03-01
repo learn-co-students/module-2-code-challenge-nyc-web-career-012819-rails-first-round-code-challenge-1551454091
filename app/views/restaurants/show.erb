@@ -1,0 +1,12 @@
+<h1>THIS RESTAURANT👩‍🍳🍕</h1>
+<!-- rest. name -->
+<h3>RESTAURANT NAME:</h3>
+<%= @restaurant.name %>
+<!-- rest. address -->
+<h3>RESTAURANT ADDRESS:</h3>
+<%= @restaurant.address %>
+<!-- pizzas that belong to this rest. -->
+<h3>THE PIZZAS:</h3>
+  <% @pizzas.each do |pizza| %>
+    <%= link_to pizza.name, pizza_path(pizza) %>
+  <% end %>

@@ -1,0 +1,22 @@
+<%# check if there are errors (from validation) %>
+<%# if yes, iterate and show each one %>
+<%# otherwise will show form as usual %>
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <%= error %>
+  <% end %>
+<% end %>
+
+<h1>NEW ZAAAAAAA🍕🍕🍕👏</h1>
+<%= form_for @pizza do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :ingredients %>
+  <%= f.text_field :ingredients %>
+  <br>
+  <%= f.label :WHICH_RESTAURANT_DO_I_BELONG_TO? %>
+  <%= f.collection_select(:restaurant_id, @restaurants, :id, :name) %>
+  <br>
+  <%= f.submit %>
+<% end %>
