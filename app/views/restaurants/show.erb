@@ -1,0 +1,15 @@
+<h1><%= @restaurant.name %> Info Page:</h1>
+
+<h2>Basic Info:</h2>
+<h3><%= label_tag :name %></h3>
+<h2><%= @restaurant.name %></h2>
+<h3><%= label_tag :address %></h3>
+<h2><%= @restaurant.address %></h2>
+<h2><%= label_tag :pizzas %></h2>
+<ul>
+  <% @restaurant.pizzas.each do |pizza| %>
+    <li><%= link_to(pizza.name, pizza_path(pizza)) %></li>
+  <% end %>
+</ul>
+
+<%= button_to("Back to Restaurant Index", restaurants_path, :method => :get) %>

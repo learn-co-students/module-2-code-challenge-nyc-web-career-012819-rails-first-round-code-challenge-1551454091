@@ -1,0 +1,10 @@
+<h1>Pizza Info: </h1><br>
+
+
+<h2><%= label_tag :name %></h2>
+<p><%= @pizza.name %></p>
+<h2><%= label_tag :ingredients %></h2>
+<p><%= @pizza.ingredients %></p>
+<br>
+<%= button_to("Back to Pizza Index", pizzas_path, :method => :get) %>
+<%= button_to("Edit Pizza", edit_pizza_path(@pizza), :method => :get) %>
