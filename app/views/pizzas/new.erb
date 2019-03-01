@@ -1,0 +1,20 @@
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <p><%= error %></p>
+  <% end %>
+<% end %>
+
+<h1>Create new pizza!</h1>
+<%= form_for @pizza do |f| %>
+<%= f.label 'Name of Pizza' %>
+<%= f.text_field :name %><br>
+<%= f.label 'Ingredients' %>
+<%= f.text_area :ingredients %><br>
+  <!-- <input type="text" name="pizza[ingredients][]">
+  <input type="text" name="pizza[ingredients][]">
+  <input type="text" name="pizza[ingredients][]"> -->
+<%# can make this as array thing %>
+<%= f.label 'Which restaurant?' %>
+<%= f.collection_select :restaurant_id, @restaurants, :id, :name %>
+<%= f.submit %>
+<% end %>
