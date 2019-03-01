@@ -1,0 +1,17 @@
+<h1 style='margin-top:100px;font-size:2rem'><%= @restaurant.name %></h1>
+
+<br>
+
+<h2><%= "Find us at:  #{@restaurant.address}"%></h2>
+
+<br>
+<br>
+
+<h3>Our Pizza Picks</h3>
+<br>
+
+<ul>
+  <% @pizzas.each do |pizza| %>
+    <li><%= link_to pizza.name, pizza_path(pizza) %></li>
+  <% end %>
+</ul>
