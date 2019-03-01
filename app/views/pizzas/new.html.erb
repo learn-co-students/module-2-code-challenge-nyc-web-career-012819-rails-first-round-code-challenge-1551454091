@@ -1,0 +1,21 @@
+<h1>Create a New Pizza</h1>
+
+<% if flash[:errors] %>
+  <h4 style="color: red">Errors</h4>
+  <p>
+    <ul>
+      <% flash[:errors].each do |error_msg| %>
+        <li style="color: red"><%= error_msg %></li>
+      <% end %>
+    </ul>
+  </p>
+<% end %>
+
+<%= form_for @pizza do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br><br>
+  <%= f.label :ingredients %><br>
+  <%= f.text_field :ingredients %><br><br>
+  <%= f.collection_select :restaurant_id, @restaurants, :id, :name %><br><br>
+  <%= f.submit %>
+<% end %>
