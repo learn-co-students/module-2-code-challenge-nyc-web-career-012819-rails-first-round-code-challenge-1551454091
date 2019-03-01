@@ -8,7 +8,7 @@ It's time to put our Rails know-how to use.
 + Form/Form Helpers
 + ActiveRecord
 + Validations
-+ Stay calm, code and debug
++ Stay calm, code and debug 
 
 ## Setup
 
