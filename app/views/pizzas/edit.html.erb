@@ -1,0 +1,13 @@
+<h1 style='margin-top:100px;font-size:2rem'>Edit Your Pizza</h1>
+
+<%= @restaurants = Restaurant.all %>
+
+<%= form_for @pizza do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :ingredients %>
+  <%= f.text_field :ingredients %>
+  <%= f.label :restaurant_id %>
+  <%= f.collection_select :restaurant_id, @restaurants, :id, :name %>
+  <%= f.submit %>
+<% end %>

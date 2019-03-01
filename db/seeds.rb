@@ -8,7 +8,7 @@
 #
 #   1
 Restaurant.destroy_all
- 
+
 Restaurant.create!([{
   name: "Sottocasa NYC",
   address: "298 Atlantic Ave, Brooklyn, NY 11201",
@@ -20,4 +20,35 @@ Restaurant.create!([{
 {
   name: "San Matteo NYC",
   address: "1559 2nd Ave, New York, NY 10028"
+}])
+
+Pizza.create!([{
+  name: "Pepperoni Pizza",
+  ingredients: "Pepperoni",
+  restaurant_id: 1,
+},
+{
+  name: "Bacon Pizza",
+  ingredients: "Bacon",
+  restaurant_id: 2,
+},
+{
+  name: "Cheese Pizza",
+  ingredients: "Cheese",
+  restaurant_id: 1,
+},
+{
+  name: "Spicy Pizza",
+  ingredients: "Jalapeños",
+  restaurant_id: 3,
+},
+{
+  name: "Hawaiian",
+  ingredients: "Pineapples",
+  restaurant_id: 2,
+},
+{
+  name: "Szechuan Pizza",
+  ingredients: "Szechuan",
+  restaurant_id: 3,
 }])
